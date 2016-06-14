@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Examples</title>
+</head>
+<body>
+   
+    <div id="example"></div>
+    <form>
+    <input type="radio" name="sex" value="male">Male<br>
+    <input type="radio" name="sex" value="female">Female
+    </form>
+
+
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+    	
+
+        var Avatar = React.createClass({
+          render: function() {
+            return (
+              <div>
+                <ProfilePic username={this.props.username} />
+                <ProfileLink username={this.props.username} />
+              </div>
+            );
+          }
+        });
+
+        var ProfilePic = React.createClass({
+          render: function() {
+            return (
+              
+              <p> {this.props.username}</p>
+            );
+          }
+        });
+
+        var ProfileLink = React.createClass({
+          render: function() {
+            return (
+              <a href={'' + this.props.username}>
+                {this.props.username}
+              </a>
+            );
+          }
+        });
+        var test = 2
+
+        ReactDOM.render(
+          <Avatar username="pwh" />,
+          document.getElementById('example')
+        );
+
+    </script>
+</body>
+</html>
